@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Data Kasus</h2>
+<form method="post">
+  <div class="mb-3">
+    <label class="form-label">Nama</label>
+    <input type="text" name="nama" class="form-control" value="{{ nama }}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Lokasi</label>
+    <input type="text" name="lokasi" class="form-control" value="{{ lokasi }}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Jaringan</label>
+    <input type="text" name="jaringan" class="form-control" value="{{ jaringan }}">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Waktu</label>
+    <input type="datetime-local" name="waktu" class="form-control" value="{{ waktu }}">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Koordinat (lat, lon)</label>
+    <input type="text" name="koordinat" class="form-control" value="{{ koordinat }}" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Simpan</button>
+  <a href="{{ url_for('index') }}" class="btn btn-secondary">Batal</a>
+</form>
+{% endblock %}

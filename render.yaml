@@ -1,0 +1,7 @@
+services:
+- type: web
+name: kasus-map
+env: python
+plan: free
+buildCommand: ""
+startCommand: python heatmap_generator.py

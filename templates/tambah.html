@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .form-input {
+            margin-bottom: 15px;
+        }
+
+        .form-input label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-input input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .alert {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .btn {
+            padding: 10px 16px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Tambah Data</h2>
+
+        {% if success %}
+            <div class="alert alert-success">✅ {{ success }}</div>
+        {% elif error %}
+            <div class="alert alert-error">⚠️ {{ error }}</div>
+        {% endif %}
+
+        <form method="post">
+            <div class="form-input">
+                <label>Nama:</label>
+                <input type="text" name="nama" placeholder="Masukkan nama pelaku/kasus" required>
+            </div>
+
+            <div class="form-input">
+                <label>Lokasi:</label>
+                <input type="text" name="lokasi" required>
+            </div>
+
+            <div class="form-input">
+                <label>Nama Jaringan:</label>
+                <input type="text" name="jaringan">
+            </div>
+
+            <div class="form-input">
+                <label>Koordinat (lat, lon):</label>
+                <input type="text" name="koordinat" placeholder="-6.9, 110.4" required>
+            </div>
+
+            <div class="form-input">
+                <label>Tanggal & Waktu Kejadian:</label>
+                <input type="datetime-local" name="waktu" required>
+            </div>
+
+            <button class="btn" type="submit">Simpan</button>
+        </form>
+
+        <a href="{{ url_for('index') }}" class="back-link">← Kembali</a>
+    </div>
+</body>
+</html>

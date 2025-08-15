@@ -1,0 +1,6 @@
+@"
+flask
+pandas
+folium
+flask-session
+"@ | Out-File -Encoding UTF8 requirements.txt

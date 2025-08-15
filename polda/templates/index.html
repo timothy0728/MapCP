@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <div class="card-body p-0">
+    {{ map_html|safe }}
+  </div>
+</div>
+<p class="mt-2">Total Data: <strong>{{ total }}</strong></p>
+{% endblock %}
